@@ -43,7 +43,7 @@ const _state: {
 /**
  * Subscribers for state changes
  */
-const _subscribers = new Map<string, Set<(data: any) => void>>();
+const _subscribers = new Map<string, Set<(data: unknown) => void>>();
 
 /**
  * Subscribe to state changes
@@ -51,7 +51,7 @@ const _subscribers = new Map<string, Set<(data: any) => void>>();
  * @param callback - Function to call when event is triggered
  * @returns Unsubscribe function
  */
-export function subscribe(eventName: string, callback: (data: any) => void): () => void {
+export function subscribe(eventName: string, callback: (data: unknown) => void): () => void {
     if (!_subscribers.has(eventName)) {
         _subscribers.set(eventName, new Set());
     }
@@ -71,7 +71,7 @@ export function subscribe(eventName: string, callback: (data: any) => void): () 
  * @param eventName - Name of the event to publish
  * @param data - Data to pass to subscribers
  */
-export function publish(eventName: string, data: any): void {
+export function publish(eventName: string, data: unknown): void {
     const subscribers = _subscribers.get(eventName);
     if (subscribers) {
         subscribers.forEach(callback => callback(data));

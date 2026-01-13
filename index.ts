@@ -5,7 +5,7 @@ import {
     setPricesFetcher, getPricesFetcher,
     setEsploraClient, getEsploraClient,
     setBoltzSession, getBoltzSession,
-    setInvoiceResponse, getInvoiceResponse,
+    setInvoiceResponse,
     setExchangeRate, getExchangeRate,
     setWasmReady, isWasmReady,
     subscribe

@@ -1,7 +1,8 @@
 {
+    "type": "module",
     "scripts": {
         "start": "webpack-dev-server",
-        "build": "rm -rf ./dist && webpack --config webpack.config.js --mode=production",
+        "build": "rm -rf ./dist && webpack --config webpack.config.cjs --mode=production",
         "lint": "eslint *.ts **/*.ts",
         "lint:fix": "eslint *.ts **/*.ts --fix",
         "sync": "rsync -avh dist/ root@unique:/var/www/btcpos.cash/",
